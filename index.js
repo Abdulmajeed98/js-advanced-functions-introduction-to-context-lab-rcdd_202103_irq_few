@@ -51,7 +51,7 @@ const wagesEarnedOnDate = (employee, dateSought) => {
     return parseFloat(rawWage.toString())
 }
 
-let allWagesFor = (employee) => {
+const allWagesFor = (employee) => {
     let eligibleDates = employee.timeInEvents.map((e) => e.date)
 
     let payable = eligibleDates.reduce((memo, d) => memo + wagesEarnedOnDate(employee, d), 0)
@@ -59,12 +59,10 @@ let allWagesFor = (employee) => {
     return payable
 }
 
-let findEmployeeByFirstName = (srcArray, firstName) => {
+const findEmployeeByFirstName = (srcArray, firstName) => {
   return srcArray.find((rec) => rec.firstName === firstName)
 }
 
-let calculatePayroll = function(arrayOfEmployeeRecords){
-    return arrayOfEmployeeRecords.reduce(function(memo, rec){
-        return memo + allWagesFor(rec)
-    }, 0)
+const calculatePayroll = (arrayOfEmployeeRecords) => {
+    return arrayOfEmployeeRecords.reduce((memo, rec) => memo + allWagesFor(rec), 0)
 }
