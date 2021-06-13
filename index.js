@@ -40,9 +40,7 @@ const createTimeOutEvent = (employee, dateStamp) => {
 const hoursWorkedOnDate = (employee, soughtDate) => {
     let inEvent = employee.timeInEvents.find((e) => e.date === soughtDate)
 
-    let outEvent = employee.timeOutEvents.find(function(e){
-        return e.date === soughtDate
-    })
+    let outEvent = employee.timeOutEvents.find((e) => e.date === soughtDate)
 
     return (outEvent.hour - inEvent.hour) / 100
 }
