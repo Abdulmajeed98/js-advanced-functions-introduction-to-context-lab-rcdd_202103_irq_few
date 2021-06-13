@@ -1,5 +1,4 @@
-// Your code here
-let createEmployeeRecord = function(row){
+const createEmployeeRecord = (row) => {
     return {
         firstName: row[0],
         familyName: row[1],
@@ -10,13 +9,11 @@ let createEmployeeRecord = function(row){
     }
 }
 
-let createEmployeeRecords = function(employeeRowData) {
-    return employeeRowData.map(function(row){
-        return createEmployeeRecord(row)
-    })
+const createEmployeeRecords = function(employeeRowData) {
+    return employeeRowData.map((row) => createEmployeeRecord(row))
 }
 
-let createTimeInEvent = function(employee, dateStamp){
+const createTimeInEvent = (employee, dateStamp) => {
     let [date, hour] = dateStamp.split(' ')
 
     employee.timeInEvents.push({
@@ -28,7 +25,7 @@ let createTimeInEvent = function(employee, dateStamp){
     return employee
 }
 
-let createTimeOutEvent = function(employee, dateStamp){
+const createTimeOutEvent = (employee, dateStamp) => {
     let [date, hour] = dateStamp.split(' ')
 
     employee.timeOutEvents.push({
@@ -40,10 +37,8 @@ let createTimeOutEvent = function(employee, dateStamp){
     return employee
 }
 
-let hoursWorkedOnDate = function(employee, soughtDate){
-    let inEvent = employee.timeInEvents.find(function(e){
-        return e.date === soughtDate
-    })
+const hoursWorkedOnDate = (employee, soughtDate) => {
+    let inEvent = employee.timeInEvents.find((e) => e.date === soughtDate)
 
     let outEvent = employee.timeOutEvents.find(function(e){
         return e.date === soughtDate
