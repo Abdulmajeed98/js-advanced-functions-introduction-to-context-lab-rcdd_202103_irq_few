@@ -51,10 +51,10 @@ const wagesEarnedOnDate = (employee, dateSought) => {
     return parseFloat(rawWage.toString())
 }
 
-let allWagesFor = function(employee){
-    let eligibleDates = employee.timeInEvents.map(function(e){
-        return e.date
-    })
+let allWagesFor = (employee) => {
+    let eligibleDates = employee.timeInEvents.map((e) => 
+         e.date
+    )
 
     let payable = eligibleDates.reduce(function(memo, d){
         return memo + wagesEarnedOnDate(employee, d)
