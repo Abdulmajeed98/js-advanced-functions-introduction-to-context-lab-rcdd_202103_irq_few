@@ -59,10 +59,8 @@ let allWagesFor = (employee) => {
     return payable
 }
 
-let findEmployeeByFirstName = function(srcArray, firstName) {
-  return srcArray.find(function(rec){
-    return rec.firstName === firstName
-  })
+let findEmployeeByFirstName = (srcArray, firstName) => {
+  return srcArray.find((rec) => rec.firstName === firstName)
 }
 
 let calculatePayroll = function(arrayOfEmployeeRecords){
